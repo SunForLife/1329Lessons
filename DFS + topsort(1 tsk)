@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int cnt = 0;
+vector <int> tin, tout;
+vector <bool> used;
+vector <vector <int> > g;
+
+void dfs(int v) {
+    tin[v] = cnt++;
+    used[v] = true;
+    for (int i = 0; i < g[v].size(); ++i) {
+        int to = g[v][i];
+        if (!used[to])
+            dfs(to);
+    }
+    tout[v] = cnt++;
+}
+
+int main() {
+    int n, m, root;
+    cin >> n;
+    tin.resize(n + 1);
+    tout.resize(n + 1);
+    used.resize(n + 1, false);
+    g.resize(n + 1);
+
+    for (int i = 0; i < n; ++i) {
+        int ancestor;
+        cin >> ancestor;
+        g[ancestor].push_back(i + 1);
+        ///Найти номер вершины корня - root =
+    }
+
+    dfs(root);
+
+    cin >> m;
+    while (m--) {
+        ///Написать обработку запросов
+    }
+    return 0;
+}
