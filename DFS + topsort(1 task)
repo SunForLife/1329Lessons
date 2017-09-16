@@ -16,7 +16,7 @@ void dfs(int v) {
         if (!used[to])
             dfs(to);
     }
-    tout[v] = cnt++;
+    ///Выставить значение времени выхода
 }
 
 int main() {
